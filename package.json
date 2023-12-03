@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.0.2",
+    "@fontsource/titillium-web": "^5.0.17",
     "astro": "^3.6.4",
     "tailwindcss": "^3.3.5"
   }
