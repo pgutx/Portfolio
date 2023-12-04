@@ -12,6 +12,13 @@ import paletteIcon from '../assets/palette-solid.svg';
 import codeIcon from '../assets/code-solid.svg';
 import astroIcon from '../assets/astro-svgrepo-com.svg';
 import tailwindIcon from '../assets/tailwind-svgrepo-com.svg';
+import Wrapper from '../components/Wrapper.astro';
+import Header from '../components/Header.astro';
+import Main from '../components/Main.astro';
+import Aside from '../components/Aside.astro';
+import ContentBottom from '../components/ContentBottom.astro';
+import ContentImages from '../components/ContentImages.astro';
+import Footer from '../components/Footer.astro';
 ---
 
 <html lang="en">
@@ -22,7 +29,14 @@ import tailwindIcon from '../assets/tailwind-svgrepo-com.svg';
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
 	</head>
-	<body class="font-serif">
-		<h1>Work in progress</h1>
+	<body class="font-serif min-h-screen grid">
+		<Wrapper>
+		<Header></Header>
+		<Main></Main>
+		<Aside></Aside>
+		<ContentBottom></ContentBottom>
+		<ContentImages></ContentImages>
+		<Footer></Footer>
+		</Wrapper>
 	</body>
 </html>
