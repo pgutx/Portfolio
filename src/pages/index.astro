@@ -27,11 +27,13 @@ import Footer from '../components/Footer.astro';
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<base href="/404/">
 		<title>Astro</title>
 	</head>
-	<body class="font-serif min-h-screen grid">
+	<body class="font-serif min-h-screen grid bg-slate-100">
 		<Wrapper>
-		<Header></Header>
+		<Header>
+		</Header>
 		<Main></Main>
 		<Aside></Aside>
 		<ContentBottom></ContentBottom>
