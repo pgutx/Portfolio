@@ -3,15 +3,17 @@ import Button from '../components/Button.astro';
 import Moon from '../assets/moon-solid.svg'
 import Linkedin from '../assets/linkedin.svg';
 import Github from '../assets/github.svg';
+
+
 ---
 
 <header
 class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gray-300 shadow-md"
     >
-    <Button href="../pages/index.astro">Home</Button>
+    <Button href="/">Home</Button>
     <div class="flex space-x-4">
-        <Button href="../pages/manual.astro">Manual</Button>
-        <Button href="../pages/automation.astro">Automation</Button>
+        <Button href="/manual">Manual</Button>
+        <Button href="/automation">Automation</Button>
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6">

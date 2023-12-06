@@ -1,0 +1,44 @@
+---
+import '@fontsource/titillium-web/400.css';
+import '@fontsource/titillium-web/600.css';
+import '@fontsource/titillium-web/700.css';
+import {Image} from 'astro:assets';
+import linkedinIcon from '../assets/linkedin.svg';
+import githubIcon from '../assets/github.svg';
+import darkIcon from '../assets/moon-solid.svg';
+import sunIcon from '../assets/sun-regular.svg';
+import robotIcon from '../assets/robot-solid.svg';
+import paletteIcon from '../assets/palette-solid.svg';
+import codeIcon from '../assets/code-solid.svg';
+import astroIcon from '../assets/astro-svgrepo-com.svg';
+import tailwindIcon from '../assets/tailwind-svgrepo-com.svg';
+import Wrapper from '../components/Wrapper.astro';
+import Header from '../components/Header.astro';
+import Main from '../components/Main.astro';
+import Aside from '../components/Aside.astro';
+import ContentBottom from '../components/ContentBottom.astro';
+import ContentImages from '../components/ContentImages.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<base href="/404/">
+		<title>Pgut</title>
+	</head>
+	<body class="font-serif min-h-screen grid bg-slate-100">
+		<Wrapper>
+		<Header>
+		</Header>
+		<Main></Main>
+		<Aside></Aside>
+		<ContentBottom></ContentBottom>
+		<ContentImages></ContentImages>
+		<Footer></Footer>
+		</Wrapper>
+	</body>
+</html>
