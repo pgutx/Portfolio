@@ -1,4 +1,20 @@
-<section
-class = "col-span-4 col-start-3 row-start-6 bg-yellow-200">
+---
+import { Image } from 'astro:assets';
+import astroIcon from '../assets/astro-svgrepo-com.svg';
+import tailwindIcon from '../assets/tailwind-svgrepo-com.svg';
+---
 
+<section
+class = "col-span-4 col-start-3 row-start-6 border-1 rounded-lg shadow-md hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-slate-400">
+<div class="h-full flex flex-col items-center place-content-center justify-around">
+<span class="text-xl uppercase">Built with</span>
+<ul class="flex flex-row space-x-4 -mt-8">
+    <li class="transition hover:-translate-y-2">
+        <a href="https://astro.build/"><Image src={astroIcon} alt="Astro"/></a>
+    </li>
+    <li class="transition hover:-translate-y-2">
+        <a href="https://tailwindcss.com/"><Image src={tailwindIcon} alt="Tailwind"/></a>
+    </li>
+</ul>
+</div>
 </section>

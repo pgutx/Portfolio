@@ -1,4 +1,5 @@
 ---
+import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
 import Moon from '../assets/moon-solid.svg'
 import Linkedin from '../assets/linkedin.svg';
@@ -17,9 +18,9 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6">
-            <li><a href=""><img src={Moon.src} alt="Dark mode"></a></li>
-            <li><a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/"><img src={Linkedin.src} alt="Linkedin" class="hover:rotate-12"></a></li>
-            <li><a href="https://github.com/pgutx"><img src={Github.src} alt="Github" class="hover:rotate-12"></a></li>
+            <li><a href=""><Image src={Moon} alt="Dark mode" class="hover:rotate-12"></a></li>
+            <li><a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/"><Image src={Linkedin} alt="Linkedin" class="hover:rotate-12"></a></li>
+            <li><a href="https://github.com/pgutx"><Image src={Github} alt="Github" class="hover:rotate-12"/></a></li>
         </ul>
     </div>
 
