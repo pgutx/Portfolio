@@ -1,5 +1,16 @@
-<aside
-class = "col-span-2 row-span-4 col-start-2 row-start-2 bg-green-300">
+---
+import { Image } from 'astro:assets';
+import robotIcon from '../assets/robot-solid.svg';
+import codeIcon from '../assets/code-solid.svg';
+import gearsIcon from '../assets/gears-solid.svg';
+---
 
+<aside
+class = "col-span-2 row-span-4 col-start-2 row-start-2 border-1 rounded-lg shadow-md hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-slate-400">
+<div class="h-full flex flex-col place-content-center items-center justify-around">
+    <Image src={robotIcon} alt="Testing" class="hover:-translate-x-2" />
+    <Image src={codeIcon} alt="Coding" class="hover:-translate-x-2"/>
+    <Image src={gearsIcon} alt="Design" class="hover:-translate-x-2"/>
+</div>
 
 </aside>
