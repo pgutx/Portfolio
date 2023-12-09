@@ -13,6 +13,7 @@
     "@astrojs/tailwind": "^5.0.3",
     "@fontsource/titillium-web": "^5.0.17",
     "astro": "^4.0.2",
+    "astro-icon": "^0.8.2",
     "tailwindcss": "^3.3.5"
   }
 }

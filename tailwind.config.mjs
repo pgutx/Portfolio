@@ -8,6 +8,9 @@ module.exports = {
 				sans: ["Titillium Web", ...defaultTheme.fontFamily.sans],
 			  },
 		},
+		variants: {
+			fill: ['hover', 'focus'],
+		  },
 	},
 	plugins: [],
 }
