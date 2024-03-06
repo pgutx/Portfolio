@@ -4,7 +4,7 @@ import Button from '../components/Button.astro';
 import Moon from '../assets/moon-solid.svg'
 import Linkedin from '../assets/linkedin.svg';
 import Github from '../assets/github.svg';
-
+import Sun from '../assets/sun-regular.svg';
 
 ---
 
@@ -18,10 +18,37 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6">
-            <li><a href=""><Image src={Moon} alt="Dark mode" class="hover:rotate-12"></a></li>
+            <div class="grid">
+            <li id="darkContainer" class="col-start-1 row-start-1"><button id="darkModeToggle"><Image id ="darkModeIcon" src={Moon} alt="Dark mode" class="hover:rotate-12"></button></li>
+            <li id="lightContainer" class="col-start-1 row-start-1 hidden"><button id="lightModeToggle"><Image id="lightModeIcon" src={Sun} alt="Light mode" class="hover:rotate-12 hidden"></button></li>
+            </div>
             <li><a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/"><Image src={Linkedin} alt="Linkedin" class="hover:rotate-12"></a></li>
             <li><a href="https://github.com/pgutx"><Image src={Github} alt="Github" class="hover:rotate-12"/></a></li>
         </ul>
     </div>
 
 </header>
+
+<script>
+const darkMode = document.querySelector("#darkModeToggle");
+const lightMode = document.querySelector("#lightModeToggle");
+const darkModeIcon = document.querySelector("#darkModeIcon");
+const lightModeIcon = document.querySelector("#lightModeIcon");
+const documentContainer = document.querySelector("html");
+const darkContainer = document.querySelector("#darkContainer");
+const lightContainer = document.querySelector("#lightContainer");
+darkMode.addEventListener('click', () => {
+    documentContainer.className = "dark";
+    lightModeIcon.classList.remove('hidden');
+    lightContainer.classList.remove('hidden');
+    darkContainer.classList.add('hidden');
+    darkModeIcon.classList.add('hidden');
+});
+lightMode.addEventListener('click', () => {
+    documentContainer.classList.remove('dark');
+    lightModeIcon.classList.add('hidden');
+    lightContainer.classList.add('hidden');
+    darkModeIcon.classList.remove('hidden');
+    darkContainer.classList.remove('hidden');
+});
+</script>

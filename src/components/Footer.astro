@@ -1,4 +1,9 @@
 <footer
 class= "flex items-center place-content-center sticky top-[100vh] col-span-8 row-start-8 border-t-2 border-gray-300 shadow-inner">
-<h2>Copyright &copy 2023 Piotr Gutowski</h2>
+<h2 id="footerContent"></h2>
 </footer>
+
+<script>
+    const dynamicFooter = document.querySelector("#footerContent");
+    dynamicFooter.innerHTML = `Copyright &copy ${new Date().getUTCFullYear()} Piotr Gutowski`;
+</script>
