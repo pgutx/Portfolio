@@ -9,6 +9,7 @@ import Aside from '../components/Aside.astro';
 import ContentBottom from '../components/ContentBottom.astro';
 import ContentImages from '../components/ContentImages.astro';
 import Footer from '../components/Footer.astro';
+import MainContentAside from '../components/mainAsideContent.astro';
 ---
 
 <html lang="en">
@@ -21,10 +22,11 @@ import Footer from '../components/Footer.astro';
 	</head>
 	<body class="font-sans min-h-screen grid bg-slate-100 dark:bg-slate-600 dark:text-slate-200">
 		<Wrapper>
-		<Header>
-		</Header>
+		<Header></Header>
 		<Main></Main>
-		<Aside></Aside>
+		<Aside>
+			<MainContentAside></MainContentAside>
+		</Aside>
 		<ContentBottom></ContentBottom>
 		<ContentImages></ContentImages>
 		<Footer></Footer>

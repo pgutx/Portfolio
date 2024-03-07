@@ -19,11 +19,27 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
     <div>
         <ul class="list-none flex flex-row space-x-6">
             <div class="grid">
-            <li id="darkContainer" class="col-start-1 row-start-1"><button id="darkModeToggle"><Image id ="darkModeIcon" src={Moon} alt="Dark mode" class="hover:rotate-12"></button></li>
-            <li id="lightContainer" class="col-start-1 row-start-1 hidden"><button id="lightModeToggle"><Image id="lightModeIcon" src={Sun} alt="Light mode" class="hover:rotate-12 hidden"></button></li>
+            <li id="darkContainer" class="col-start-1 row-start-1">
+                <button id="darkModeToggle">
+                    <Image id ="darkModeIcon" src={Moon} alt="Dark mode" class="hover:rotate-12">
+                </button>
+                </li>
+            <li id="lightContainer" class="col-start-1 row-start-1 hidden">
+                <button id="lightModeToggle">
+                    <Image id="lightModeIcon" src={Sun} alt="Light mode" class="hover:rotate-12 hidden">
+                </button>
+            </li>
             </div>
-            <li><a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/"><Image src={Linkedin} alt="Linkedin" class="hover:rotate-12"></a></li>
-            <li><a href="https://github.com/pgutx"><Image src={Github} alt="Github" class="hover:rotate-12"/></a></li>
+            <li>
+                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/">
+                    <Image src={Linkedin} alt="Linkedin" class="hover:rotate-12">
+                </a>
+            </li>
+            <li>
+                <a href="https://github.com/pgutx">
+                    <Image src={Github} alt="Github" class="hover:rotate-12"/>
+                </a>
+            </li>
         </ul>
     </div>
 
@@ -38,7 +54,7 @@ const documentContainer = document.querySelector("html");
 const darkContainer = document.querySelector("#darkContainer");
 const lightContainer = document.querySelector("#lightContainer");
 darkMode.addEventListener('click', () => {
-    documentContainer.className = "dark";
+    documentContainer.classList.add('dark');
     lightModeIcon.classList.remove('hidden');
     lightContainer.classList.remove('hidden');
     darkContainer.classList.add('hidden');
