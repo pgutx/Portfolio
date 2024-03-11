@@ -3,13 +3,15 @@ import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
 import Moon from '../assets/moon-solid.svg'
 import Linkedin from '../assets/linkedin.svg';
+import LinkedinLight from '../assets/linkedin1.svg';
 import Github from '../assets/github.svg';
-import Sun from '../assets/sun-regular.svg';
+import GithubLight from '../assets/github1.svg';
+import Sun from '../assets/sun-regular1.svg';
 
 ---
 
 <header
-class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gray-300 shadow-md"
+class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gray-300 shadow-sm"
     >
     <Button href="/">Home</Button>
     <div class="flex space-x-4">
@@ -23,50 +25,58 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
                 <button id="darkModeToggle">
                     <Image id ="darkModeIcon" src={Moon} alt="Dark mode" class="hover:rotate-12">
                 </button>
-                </li>
+            </li>
             <li id="lightContainer" class="col-start-1 row-start-1 hidden">
                 <button id="lightModeToggle">
                     <Image id="lightModeIcon" src={Sun} alt="Light mode" class="hover:rotate-12 hidden">
                 </button>
             </li>
             </div>
-            <li>
+            <div class="grid">
+            <li id="linkedinDark" class="col-start-1 row-start-1">
                 <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/">
-                    <Image src={Linkedin} alt="Linkedin" class="hover:rotate-12">
+                    <Image id="linkedDarkIcon" src={Linkedin} alt="Linkedin" class="hover:rotate-12">
                 </a>
             </li>
-            <li>
+            <li id="linkedinLight" class="col-start-1 row-start-1 hidden">
+                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/">
+                    <Image id="linkedLightIcon" src={LinkedinLight} alt="Linkedin" class="hover:rotate-12 hidden">
+                </a>
+            </li>
+            </div>
+            <div class="grid">
+            <li id="githubDark" class="col-start-1 row-start-1">
                 <a href="https://github.com/pgutx">
-                    <Image src={Github} alt="Github" class="hover:rotate-12"/>
+                    <Image id="githubDarkIcon" src={Github} alt="Github" class="hover:rotate-12"/>
                 </a>
             </li>
+            <li id="githubLight" class="col-start-1 row-start-1 hidden">
+                <a href="https://github.com/pgutx">
+                    <Image id="githubLightIcon" src={GithubLight} alt="Github" class="hover:rotate-12 hidden"/>
+                </a>
+            </li>
+            </div>
         </ul>
     </div>
 
 </header>
 
 <script>
+// DARK MODE TOGGLE ---------------------------------------------------------------
 const darkMode = document.querySelector("#darkModeToggle");
 const lightMode = document.querySelector("#lightModeToggle");
 const darkModeIcon = document.querySelector("#darkModeIcon");
 const lightModeIcon = document.querySelector("#lightModeIcon");
 const darkContainer = document.querySelector("#darkContainer");
 const lightContainer = document.querySelector("#lightContainer");
-
-// darkMode.addEventListener("click", () => {
-//     document.documentElement.classList.add("dark");
-//     lightModeIcon.classList.remove('hidden');
-//     lightContainer.classList.remove('hidden');
-//     darkContainer.classList.add('hidden');
-//     darkModeIcon.classList.add('hidden');
-//     });
-//     lightMode.addEventListener('click', () => {
-//     document.documentElement.classList.remove("dark");
-//     lightModeIcon.classList.add('hidden');
-//     lightContainer.classList.add('hidden');
-//     darkModeIcon.classList.remove('hidden');
-//     darkContainer.classList.remove('hidden');
-// });
+const linkedDark = document.querySelector("#linkedinDark");
+const linkedDarkIcon = document.querySelector("#linkedDarkIcon");
+const linkedLight = document.querySelector("#linkedinLight");
+const linkedLightIcon = document.querySelector("#linkedLightIcon");
+const githubDark = document.querySelector("#githubDark");
+const githubDarkIcon = document.querySelector("#githubDarkIcon");
+const githubLight = document.querySelector("#githubLight");
+const githubLightIcon = document.querySelector("#githubLightIcon");
 
 const theme = (() => {
       if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -84,27 +94,50 @@ const theme = (() => {
       lightContainer.classList.add('hidden');
       darkModeIcon.classList.remove('hidden');
       darkContainer.classList.remove('hidden');
+      linkedLight.classList.add('hidden');
+      linkedLightIcon.classList.add('hidden');
+      linkedDark.classList.remove('hidden');
+      linkedDarkIcon.classList.remove('hidden');
+      githubLight.classList.add('hidden');
+      githubLightIcon.classList.add('hidden');
+      githubDark.classList.remove('hidden');
+      githubDarkIcon.classList.remove('hidden');
     } else {
       document.documentElement.classList.add("dark");
       lightModeIcon.classList.remove('hidden');
       lightContainer.classList.remove('hidden');
       darkContainer.classList.add('hidden');
       darkModeIcon.classList.add('hidden');
+      linkedDark.classList.add('hidden');
+      linkedDarkIcon.classList.add('hidden');
+      linkedLight.classList.remove('hidden');
+      linkedLightIcon.classList.remove('hidden');
+      githubDark.classList.add('hidden');
+      githubDarkIcon.classList.add('hidden');
+      githubLight.classList.remove('hidden');
+      githubLightIcon.classList.remove('hidden');
     }
 
     window.localStorage.setItem("theme", theme);
 
-    const handleToggleClick = () => {
+    const handleToggleClick = (darkEnv) => {
       const element = document.documentElement;
       element.classList.toggle("dark");
 
       const isDark = element.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
-
-      lightModeIcon.classList.remove('hidden');
-      lightContainer.classList.remove('hidden');
-      darkContainer.classList.add('hidden');
-      darkModeIcon.classList.add('hidden');
+       lightModeIcon.classList.remove('hidden');
+       lightContainer.classList.remove('hidden');
+       darkContainer.classList.add('hidden');
+       darkModeIcon.classList.add('hidden');
+       linkedDark.classList.add('hidden');
+       linkedDarkIcon.classList.add('hidden');
+       linkedLight.classList.remove('hidden');
+       linkedLightIcon.classList.remove('hidden');
+       githubDark.classList.add('hidden');
+       githubDarkIcon.classList.add('hidden');
+       githubLight.classList.remove('hidden');
+       githubLightIcon.classList.remove('hidden');
 }
     const lightToggleClick = () => {
       const element = document.documentElement;
@@ -112,13 +145,21 @@ const theme = (() => {
 
       const isDark = element.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
-
-      lightModeIcon.classList.add('hidden');
-      lightContainer.classList.add('hidden');
-      darkModeIcon.classList.remove('hidden');
-      darkContainer.classList.remove('hidden');
+       lightModeIcon.classList.add('hidden');
+       lightContainer.classList.add('hidden');
+       darkModeIcon.classList.remove('hidden');
+       darkContainer.classList.remove('hidden');
+       linkedLight.classList.add('hidden');
+       linkedLightIcon.classList.add('hidden');
+       linkedDark.classList.remove('hidden');
+       linkedDarkIcon.classList.remove('hidden');
+       githubLight.classList.add('hidden');
+       githubLightIcon.classList.add('hidden');
+       githubDark.classList.remove('hidden');
+       githubDarkIcon.classList.remove('hidden');
     };
 
     darkMode.addEventListener('click',handleToggleClick);
     lightMode.addEventListener('click',lightToggleClick);
+// END -------------------------------------------------------
 </script>
