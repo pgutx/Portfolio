@@ -4,9 +4,38 @@ import robotIcon from '../assets/robot-solid.svg';
 import codeIcon from '../assets/code-solid.svg';
 import gearsIcon from '../assets/gears-solid.svg';
 ---
-
-<div class="h-full flex flex-col place-content-center items-center justify-around">
-    <Image src={robotIcon} alt="Testing" class="hover:-translate-x-2" />
-    <Image src={codeIcon} alt="Coding" class="hover:-translate-x-2"/>
-    <Image src={gearsIcon} alt="Design" class="hover:-translate-x-2"/>
+<div class="grid h-full grid-cols-1 grid-rows-3">
+    <div class="grid row-span-1 place-content-center">
+        <Image id="robotIcon" src={robotIcon} alt="Testing" class="hover:-translate-x-2 hover:cursor-pointer" />
+        <p id="testingParagraph" class="col-start-1 row-start-1 hidden text-lg text-justify m-1 whitespace-pre-line">My main interest is Quality Assurance. &NewLine; I'm expanding my knowledge into automation.</p>
+    </div>
+    
+    <div class="grid row-span-1 place-content-center">
+        <Image id="codeIcon" src={codeIcon} alt="Coding" class="hover:-translate-x-2 hover:cursor-pointer"/>
+        <p id="devParagraph" class="col-start-1 row-start-1 hidden text-lg text-justify m-1">I'm also interested in FrontEnd development.</p>
+    </div>
+    
+    <div class="grid row-span-1 place-content-center">
+        <Image src={gearsIcon} alt="Design" class="hover:-translate-x-2 hover:cursor-pointer"/>
+    </div>
 </div>
+
+<script>
+    const robotIcon = document.querySelector("#robotIcon");
+    const testingParagraph = document.querySelector("#testingParagraph");
+    const codeIcon = document.querySelector("#codeIcon");
+    const devParagraph = document.querySelector("#devParagraph");
+    robotIcon.addEventListener('click', () =>{
+        robotIcon.classList.add('hidden');
+        testingParagraph.classList.remove('hidden');
+    })
+    codeIcon.addEventListener('click', () =>{
+        codeIcon.classList.add('hidden');
+        devParagraph.classList.remove('hidden');
+    })
+</script>
+<!-- <div class="h-full flex flex-col place-content-center items-center justify-around">
+        <Image src={robotIcon} alt="Testing" class="hover:-translate-x-2" />
+        <Image src={codeIcon} alt="Coding" class="hover:-translate-x-2"/>
+        <Image src={gearsIcon} alt="Design" class="hover:-translate-x-2"/>
+</div> -->

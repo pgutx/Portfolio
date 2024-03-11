@@ -34,31 +34,30 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
             </div>
             <div class="grid">
             <li id="linkedinDark" class="col-start-1 row-start-1">
-                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/">
+                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/" target="_blank">
                     <Image id="linkedDarkIcon" src={Linkedin} alt="Linkedin" class="hover:rotate-12">
                 </a>
             </li>
             <li id="linkedinLight" class="col-start-1 row-start-1 hidden">
-                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/">
+                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/" target="_blank">
                     <Image id="linkedLightIcon" src={LinkedinLight} alt="Linkedin" class="hover:rotate-12 hidden">
                 </a>
             </li>
             </div>
             <div class="grid">
             <li id="githubDark" class="col-start-1 row-start-1">
-                <a href="https://github.com/pgutx">
+                <a href="https://github.com/pgutx" target="_blank">
                     <Image id="githubDarkIcon" src={Github} alt="Github" class="hover:rotate-12"/>
                 </a>
             </li>
             <li id="githubLight" class="col-start-1 row-start-1 hidden">
-                <a href="https://github.com/pgutx">
+                <a href="https://github.com/pgutx" target="_blank">
                     <Image id="githubLightIcon" src={GithubLight} alt="Github" class="hover:rotate-12 hidden"/>
                 </a>
             </li>
             </div>
         </ul>
     </div>
-
 </header>
 
 <script>
@@ -120,7 +119,7 @@ const theme = (() => {
 
     window.localStorage.setItem("theme", theme);
 
-    const handleToggleClick = (darkEnv) => {
+    const handleToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
 
