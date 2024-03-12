@@ -1,13 +1,9 @@
 ---
-import { Image } from 'astro:assets';
 import Button from '../components/Button.astro';
-import Moon from '../assets/moon-solid.svg'
-import Linkedin from '../assets/linkedin.svg';
-import LinkedinLight from '../assets/linkedin1.svg';
-import Github from '../assets/github.svg';
-import GithubLight from '../assets/github1.svg';
-import Sun from '../assets/sun-regular1.svg';
-
+import { Linkedin } from 'simple-icons-astro';
+import { Github } from 'simple-icons-astro';
+import { Moon } from 'lucide-astro';
+import { Sun } from 'lucide-astro';
 ---
 
 <header
@@ -23,39 +19,25 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-gr
             <div class="grid">
             <li id="darkContainer" class="col-start-1 row-start-1">
                 <button id="darkModeToggle">
-                    <Image id ="darkModeIcon" src={Moon} alt="Dark mode" class="hover:rotate-12">
+                    <Moon id="darkModeIcon" alt="Dark mode" class="hover:text-purple-500">
                 </button>
             </li>
             <li id="lightContainer" class="col-start-1 row-start-1 hidden">
                 <button id="lightModeToggle">
-                    <Image id="lightModeIcon" src={Sun} alt="Light mode" class="hover:rotate-12 hidden">
+                    <Sun id="lightModeIcon" alt="Light mode" class="hover:text-purple-500 hidden">
                 </button>
             </li>
             </div>
-            <div class="grid">
             <li id="linkedinDark" class="col-start-1 row-start-1">
                 <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/" target="_blank">
-                    <Image id="linkedDarkIcon" src={Linkedin} alt="Linkedin" class="hover:rotate-12">
+                    <Linkedin id="linkedDarkIcon" alt="Linkedin" class="hover:text-purple-500" />
                 </a>
             </li>
-            <li id="linkedinLight" class="col-start-1 row-start-1 hidden">
-                <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/" target="_blank">
-                    <Image id="linkedLightIcon" src={LinkedinLight} alt="Linkedin" class="hover:rotate-12 hidden">
-                </a>
-            </li>
-            </div>
-            <div class="grid">
             <li id="githubDark" class="col-start-1 row-start-1">
                 <a href="https://github.com/pgutx" target="_blank">
-                    <Image id="githubDarkIcon" src={Github} alt="Github" class="hover:rotate-12"/>
+                    <Github id="githubDarkIcon" alt="Github" class="hover:text-purple-500" />
                 </a>
             </li>
-            <li id="githubLight" class="col-start-1 row-start-1 hidden">
-                <a href="https://github.com/pgutx" target="_blank">
-                    <Image id="githubLightIcon" src={GithubLight} alt="Github" class="hover:rotate-12 hidden"/>
-                </a>
-            </li>
-            </div>
         </ul>
     </div>
 </header>
@@ -68,14 +50,6 @@ const darkModeIcon = document.querySelector("#darkModeIcon");
 const lightModeIcon = document.querySelector("#lightModeIcon");
 const darkContainer = document.querySelector("#darkContainer");
 const lightContainer = document.querySelector("#lightContainer");
-const linkedDark = document.querySelector("#linkedinDark");
-const linkedDarkIcon = document.querySelector("#linkedDarkIcon");
-const linkedLight = document.querySelector("#linkedinLight");
-const linkedLightIcon = document.querySelector("#linkedLightIcon");
-const githubDark = document.querySelector("#githubDark");
-const githubDarkIcon = document.querySelector("#githubDarkIcon");
-const githubLight = document.querySelector("#githubLight");
-const githubLightIcon = document.querySelector("#githubLightIcon");
 
 const theme = (() => {
       if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -93,28 +67,12 @@ const theme = (() => {
       lightContainer.classList.add('hidden');
       darkModeIcon.classList.remove('hidden');
       darkContainer.classList.remove('hidden');
-      linkedLight.classList.add('hidden');
-      linkedLightIcon.classList.add('hidden');
-      linkedDark.classList.remove('hidden');
-      linkedDarkIcon.classList.remove('hidden');
-      githubLight.classList.add('hidden');
-      githubLightIcon.classList.add('hidden');
-      githubDark.classList.remove('hidden');
-      githubDarkIcon.classList.remove('hidden');
     } else {
       document.documentElement.classList.add("dark");
       lightModeIcon.classList.remove('hidden');
       lightContainer.classList.remove('hidden');
       darkContainer.classList.add('hidden');
       darkModeIcon.classList.add('hidden');
-      linkedDark.classList.add('hidden');
-      linkedDarkIcon.classList.add('hidden');
-      linkedLight.classList.remove('hidden');
-      linkedLightIcon.classList.remove('hidden');
-      githubDark.classList.add('hidden');
-      githubDarkIcon.classList.add('hidden');
-      githubLight.classList.remove('hidden');
-      githubLightIcon.classList.remove('hidden');
     }
 
     window.localStorage.setItem("theme", theme);
@@ -129,14 +87,6 @@ const theme = (() => {
        lightContainer.classList.remove('hidden');
        darkContainer.classList.add('hidden');
        darkModeIcon.classList.add('hidden');
-       linkedDark.classList.add('hidden');
-       linkedDarkIcon.classList.add('hidden');
-       linkedLight.classList.remove('hidden');
-       linkedLightIcon.classList.remove('hidden');
-       githubDark.classList.add('hidden');
-       githubDarkIcon.classList.add('hidden');
-       githubLight.classList.remove('hidden');
-       githubLightIcon.classList.remove('hidden');
 }
     const lightToggleClick = () => {
       const element = document.documentElement;
@@ -148,14 +98,6 @@ const theme = (() => {
        lightContainer.classList.add('hidden');
        darkModeIcon.classList.remove('hidden');
        darkContainer.classList.remove('hidden');
-       linkedLight.classList.add('hidden');
-       linkedLightIcon.classList.add('hidden');
-       linkedDark.classList.remove('hidden');
-       linkedDarkIcon.classList.remove('hidden');
-       githubLight.classList.add('hidden');
-       githubLightIcon.classList.add('hidden');
-       githubDark.classList.remove('hidden');
-       githubDarkIcon.classList.remove('hidden');
     };
 
     darkMode.addEventListener('click',handleToggleClick);
