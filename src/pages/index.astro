@@ -9,7 +9,10 @@ import Aside from '../components/Aside.astro';
 import ContentBottom from '../components/ContentBottom.astro';
 import ContentImages from '../components/ContentImages.astro';
 import Footer from '../components/Footer.astro';
-import MainContentAside from '../components/mainAsideContent.astro';
+import MainContentAside from '../components/MainAsideContent.astro';
+import AsideCardWrapper from '../components/AsideCardWrapper.astro';
+import MainCardWrapper from '../components/MainCardWrapper.astro';
+import BottomCardWrapper from '../components/BottomCardWrapper.astro';
 ---
 
 <html lang="en">
@@ -20,16 +23,27 @@ import MainContentAside from '../components/mainAsideContent.astro';
 		<meta name="generator" content={Astro.generator} />
 		<title>Piotr Gutowski QA</title>
 	</head>
-	<body class="font-sans min-h-screen grid bg-slate-100 dark:bg-slate-600 dark:text-slate-200">
+	<body class="font-sans min-h-screen grid dark:text-slate-200">
 		<Wrapper>
 		<Header></Header>
-		<Main></Main>
+		<Main>
+			<MainCardWrapper>
+
+			</MainCardWrapper>
+		</Main>
 		<Aside>
-			<MainContentAside></MainContentAside>
+			<AsideCardWrapper>
+				<MainContentAside></MainContentAside>
+			</AsideCardWrapper>
 		</Aside>
-		<ContentBottom></ContentBottom>
+		<ContentBottom>
+			<BottomCardWrapper>
+
+			</BottomCardWrapper>
+		</ContentBottom>
 		<ContentImages></ContentImages>
 		<Footer></Footer>
 		</Wrapper>
 	</body>
 </html>
+

@@ -4,8 +4,9 @@ import { Code } from 'lucide-astro';
 import { Cog } from 'lucide-astro';
 import { Playwright } from 'simple-icons-astro';
 import { Postman } from 'simple-icons-astro';
+import { Githubactions } from 'simple-icons-astro';
 ---
-<div id="mainContentAside" class="grid h-full grid-cols-1 grid-rows-3">
+<div id="mainContentAside" class="grid h-full grid-cols-1 grid-rows-3 col-start-1 row-start-1 z-0">
     <div class="grid row-span-1 place-content-center">
         <Bug id="bugIcon" alt="Testing" class="w-14 h-14 hover:cursor-pointer hover:text-purple-500" />
         <p id="testingParagraph" class="col-start-1 row-start-1 hidden text-lg text-justify -m-2 whitespace-pre-line">My main interest is Quality Assurance. &NewLine; I'm expanding my knowledge into automation.</p>
@@ -25,6 +26,9 @@ import { Postman } from 'simple-icons-astro';
                 </li>
                 <li>
                     <Postman alt="Postman" class="w-14 h-14 hover:text-orange-500"/>
+                </li>
+                <li>
+                    <Githubactions alt="Github Actions" class="w-14 h-14 hover:text-blue-500";
                 </li>
             </ul>
         </div>
