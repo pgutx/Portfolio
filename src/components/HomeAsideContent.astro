@@ -36,24 +36,29 @@ import { Githubactions } from 'simple-icons-astro';
 </div>
 
 <script>
+    
     const bugIcon = document.querySelector("#bugIcon");
     const testingParagraph = document.querySelector("#testingParagraph");
-    const codeIcon = document.querySelector("#codeIcon");
-    const devParagraph = document.querySelector("#devParagraph");
-    const cogIcon = document.querySelector("#cogIcon");
-    const technologyContainer = document.querySelector("#technologyContainer");
-
 
     bugIcon.addEventListener('click', () =>{
         bugIcon.classList.add('hidden');
         testingParagraph.classList.remove('hidden');
     });
+
+    const codeIcon = document.querySelector("#codeIcon");
+    const devParagraph = document.querySelector("#devParagraph");
+
     codeIcon.addEventListener('click', () =>{
         codeIcon.classList.add('hidden');
         devParagraph.classList.remove('hidden');
     });
+
+    const cogIcon = document.querySelector("#cogIcon");
+    const technologyContainer = document.querySelector("#technologyContainer");
+
     cogIcon.addEventListener('click', () =>{
         cogIcon.classList.add('hidden');
         technologyContainer.classList.remove('hidden');
     });
+    
 </script>
