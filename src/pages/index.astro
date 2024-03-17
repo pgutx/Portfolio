@@ -14,12 +14,15 @@ import MainCardWrapper from '../components/MainCardWrapper.astro';
 import BottomCardWrapper from '../components/BottomCardWrapper.astro';
 import HomeAsideContent from '../components/HomeAsideContent.astro';
 import HomeBottomContent from '../components/HomeBottomContent.astro';
+import HomeMainContent from '../components/HomeMainContent.astro';
 ---
 
 <html lang="en">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="author" content="Piotr Gutowski"/>
+		<meta name="description" content="My portfolio site, showcasing manual and automation testing projects I've done."/>
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Piotr Gutowski QA</title>
@@ -29,7 +32,7 @@ import HomeBottomContent from '../components/HomeBottomContent.astro';
 		<Header></Header>
 		<Main>
 			<MainCardWrapper>
-
+				<HomeMainContent></HomeMainContent>
 			</MainCardWrapper>
 		</Main>
 		<Aside>

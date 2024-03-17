@@ -1,0 +1,74 @@
+---
+import { ArrowRightCircle } from 'lucide-astro';
+import { ArrowLeftCircle } from 'lucide-astro';
+import HomeFirstSlide from './HomeFirstSlide.astro';
+import HomeSecondSlide from './HomeSecondSlide.astro';
+import HomeThirdSlide from './HomeThirdSlide.astro';
+import HomeFourthSlide from './HomeFourthSlide.astro';
+import HomeFifthSlide from './HomeFifthSlide.astro';
+---
+
+<div class="swiper w-full h-full grid col-span-1 row-span-1 col-start-1 row-start-1 z-0">
+
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide">
+        <HomeFirstSlide></HomeFirstSlide>
+      </div>
+      <div class="swiper-slide">
+        <HomeSecondSlide></HomeSecondSlide>
+      </div>
+      <div class="swiper-slide">
+        <HomeThirdSlide></HomeThirdSlide>
+      </div>
+      <div class="swiper-slide">
+        <HomeFourthSlide></HomeFourthSlide>
+      </div>
+      <div class="swiper-slide">
+        <HomeFifthSlide></HomeFifthSlide>
+      </div>
+      ...
+    </div>
+
+    <div class="swiper-pagination [&_.swiper-pagination-bullet-active]:bg-violet-500 dark:[&_.swiper-pagination-bullet-active]:bg-indigo-400"></div>
+
+    <ArrowLeftCircle class="swiper-button-prev"></ArrowLeftCircle>
+    <ArrowRightCircle class="swiper-button-next"></ArrowRightCircle>  
+
+  </div>
+  
+<style>
+    .swiper-button-prev, .swiper-button-next {
+        @apply text-gray-950 dark:text-slate-50 hover:text-violet-500 dark:hover:text-violet-500 w-14 h-14;
+    }
+</style>
+
+<script>
+
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
+import { register } from 'swiper/element/bundle';
+register();
+
+
+const swiper = new Swiper('.swiper', {
+  direction: 'horizontal',
+
+  pagination: {
+    el: '.swiper-pagination',
+    bulletClass: 'swiper-pagination-bullet',
+  },
+
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+
+});
+
+
+</script>
