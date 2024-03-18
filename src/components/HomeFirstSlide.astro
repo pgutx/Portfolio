@@ -1,1 +1,39 @@
-<div>Testronic</div>
+---
+import { Image } from 'astro:assets';
+import TestronicLogo from '../assets/testronic.png';
+---
+
+<div class="h-full grid grid-cols-1 grid-rows-2">
+    <div class="grid-rows-1 row-start-1">
+        <div class="grid h-full grid-cols-2">
+            <div class="h-full col-start-1 grid items-center justify-center">
+                <Image src={TestronicLogo} alt="Testronic" class="h-32 w-32"></Image>
+            </div>
+            <div class="h-full col-start-2 grid items-center justify-start">
+                <ul class="space-y-8">
+                    <li>
+                        <a href="https://www.testroniclabs.com/" target="_blank">
+                        <h2 class="text-5xl hover:text-violet-500">Testronic</h2>
+                        </a>
+                    </li>
+                    <li>
+                        <h3 class="text-lg">October 2022 - Present</h3>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="grid-rows-1 row-start-2">
+        <div class="grid items-start justify-center text-lg place-content-start">
+                <p>
+                    Working as a Functionality Quality Assurance tester in GameDev industry. 
+                </p>
+                <p>
+                    Currently my responsibilities include functional and maintenance testing.
+                </p>
+                <p>
+                    The project follows Agile methodology. The tools that I'm using are: Jira, Jenkins, Swagger, Testrail
+                </p>
+        </div>
+    </div>
+</div>
