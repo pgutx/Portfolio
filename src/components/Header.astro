@@ -42,7 +42,7 @@ class="col-span-8 flex flex-row justify-around items-center border-b-2 border-sl
     </div>
 </header>
 
-<script>
+<script is:inline>
 // DARK MODE TOGGLE ---------------------------------------------------------------
 const darkMode = document.querySelector("#darkModeToggle");
 const lightMode = document.querySelector("#lightModeToggle");
@@ -50,6 +50,7 @@ const darkModeIcon = document.querySelector("#darkModeIcon");
 const lightModeIcon = document.querySelector("#lightModeIcon");
 const darkContainer = document.querySelector("#darkContainer");
 const lightContainer = document.querySelector("#lightContainer");
+
 
 const theme = (() => {
       if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -76,7 +77,6 @@ const theme = (() => {
     }
 
     window.localStorage.setItem("theme", theme);
-
     const handleToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
