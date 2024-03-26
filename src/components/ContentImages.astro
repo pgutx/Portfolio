@@ -5,23 +5,28 @@ import { Swiper } from 'simple-icons-astro';
 ---
 
 <section
-class = "col-span-4 col-start-3 row-start-6 border border-slate-400 rounded-lg shadow-md hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-slate-400 dark:border dark:border-indigo-500 dark:hover:outline-offset-0 dark:hover:outline-1 dark:hover:outline-indigo-500">
+class = "
+col-span-8 col-start-1 row-start-7 py-2
+lg:col-span-4 lg:col-start-3 lg:row-start-6 
+border border-slate-400 rounded-lg shadow-md 
+hover:outline hover:outline-1 hover:outline-offset-0 hover:outline-slate-400 
+dark:border dark:border-indigo-500 dark:hover:outline-offset-0 dark:hover:outline-1 dark:hover:outline-indigo-500">
 <div class="h-full flex flex-col items-center place-content-center justify-around">
-<h2 class="text-xl uppercase -mt-1 pb-8">Built with</h2>
-<ul class="flex flex-row space-x-4 -mt-12">
+<h2 class="text-xl uppercase -mt-2 lg:-mt-1 lg:pb-8">Built with</h2>
+<ul class="flex flex-row space-x-3 lg:space-x-4 lg:-mt-12">
     <li class="transition hover:-translate-y-2">
         <a href="https://astro.build/" target="_blank">
-            <AstroIcon alt="Astro" class="h-14 w-14 hover:text-orange-500"/>
+            <AstroIcon alt="Astro" class="h-8 w-8 lg:h-14 lg:w-14 hover:text-orange-500"/>
         </a>
     </li>
     <li class="transition hover:-translate-y-2">
         <a href="https://tailwindcss.com/" target="_blank">
-            <Tailwindcss alt="Tailwind" class="h-14 w-14 hover:text-sky-500"/>
+            <Tailwindcss alt="Tailwind" class="h-8 w-8 lg:h-14 lg:w-14 hover:text-sky-500"/>
         </a>
     </li>
     <li class="transition hover:-translate-y-2">
         <a href="https://swiperjs.com/" target="_blank">
-            <Swiper alt="Swiper" class="h-14 w-14 hover:text-blue-500"/>
+            <Swiper alt="Swiper" class="h-8 w-8 lg:h-14 lg:w-14 hover:text-blue-500"/>
         </a>
     </li>
 </ul>

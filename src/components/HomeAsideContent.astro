@@ -6,29 +6,31 @@ import { Playwright } from 'simple-icons-astro';
 import { Postman } from 'simple-icons-astro';
 import { Githubactions } from 'simple-icons-astro';
 ---
-<div id="homeAsideContent" class="grid h-full grid-cols-1 grid-rows-3 col-start-1 row-start-1 z-0">
-    <div class="grid row-span-1 place-content-center">
-        <Bug id="bugIcon" alt="Testing" class="w-14 h-14 hover:cursor-pointer hover:text-purple-500" />
-        <p id="testingParagraph" class="col-start-1 row-start-1 hidden text-lg text-justify -m-2 whitespace-pre-line">My main interest is Quality Assurance. &NewLine; I'm expanding my knowledge into automation.</p>
+<div id="homeAsideContent" class="
+grid grid-cols-3 grid-rows-1 z-0 col-start-1 row-start-1 py-4
+lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg:z-0 lg:py-0">
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+        <Bug id="bugIcon" alt="Testing" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500" />
+        <p id="testingParagraph" class="col-start-1 row-start-1 hidden text-md m-3 text-wrap lg:text-lg lg:text-justify lg:-m-2 lg:whitespace-pre-line">My main interest is Quality Assurance. &NewLine; I'm expanding my knowledge into automation.</p>
     </div>
     
-    <div class="grid row-span-1 place-content-center">
-        <Code id="codeIcon" alt="Coding" class="w-14 h-14 hover:cursor-pointer hover:text-purple-500"/>
-        <p id="devParagraph" class="col-start-1 row-start-1 hidden text-lg text-justify -m-2">I'm also interested in FrontEnd development.</p>
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+        <Code id="codeIcon" alt="Coding" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500"/>
+        <p id="devParagraph" class="col-start-1 row-start-1 hidden text-md text-wrap lg:text-lg lg:text-justify lg:-m-2">I'm also interested in FrontEnd development.</p>
     </div>
     
-    <div class="grid row-span-1 place-content-center">
-        <Cog id="cogIcon" alt="Technologies" class="w-14 h-14 hover:cursor-pointer hover:text-purple-500"/>
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+        <Cog id="cogIcon" alt="Technologies" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500"/>
         <div id="technologyContainer" class="hidden place-content-center">
-            <ul class="flex flex-row gap-x-3.5">
+            <ul class="flex flex-col gap-y-2 lg:flex lg:flex-row lg:gap-x-3.5">
                 <li>
-                    <Playwright alt="Playwright" class="w-14 h-14 hover:text-green-500"/>
+                    <Playwright alt="Playwright" class="w-12 h-12 lg:w-14 lg:h-14 hover:text-green-500"/>
                 </li>
                 <li>
-                    <Postman alt="Postman" class="w-14 h-14 hover:text-orange-500"/>
+                    <Postman alt="Postman" class="w-12 h-12 lg:w-14 lg:h-14 hover:text-orange-500"/>
                 </li>
                 <li>
-                    <Githubactions alt="Github Actions" class="w-14 h-14 hover:text-blue-500"/>
+                    <Githubactions alt="Github Actions" class="w-12 h-12 lg:w-14 lg:h-14 hover:text-blue-500"/>
                 </li>
             </ul>
         </div>

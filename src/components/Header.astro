@@ -7,12 +7,17 @@ import { Sun } from 'lucide-astro';
 ---
 
 <header
-class="col-span-8 flex flex-row justify-around items-center border-b-2 border-slate-300 dark:border-indigo-500 shadow-sm bg-gradient-to-r from-slate-100 from-20% via-indigo-100 via-60% to-slate-100 to-100% dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark:via-60% dark:to-slate-900 dark:to-100%"
+class="
+ flex flex-col items-center space-y-2
+ col-span-8 lg:flex lg:flex-row lg:justify-around lg:items-center lg:space-y-0
+ border-b-2 border-slate-300 dark:border-indigo-500 shadow-sm 
+ bg-gradient-to-r from-slate-100 from-20% via-indigo-100 via-60% to-slate-100 to-100% 
+ dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark:via-60% dark:to-slate-900 dark:to-100%"
     >
-    <Button href="/">Home</Button>
-    <div class="flex space-x-4">
-        <Button href="/manual">Manual</Button>
-        <Button href="/automation">Automation</Button>
+    <div class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0">
+            <Button href="/">Home</Button>
+            <Button href="/manual">Manual</Button>
+            <Button href="/automation">Automation</Button>
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6">
