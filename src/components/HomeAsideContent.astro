@@ -9,17 +9,17 @@ import { Githubactions } from 'simple-icons-astro';
 <div id="homeAsideContent" class="
 grid grid-cols-3 grid-rows-1 z-0 col-start-1 row-start-1 py-4
 lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg:z-0 lg:py-0">
-    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center lg:justify-items-center">
         <Bug id="bugIcon" alt="Testing" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500" />
         <p id="testingParagraph" class="col-start-1 row-start-1 hidden text-md m-3 text-wrap lg:text-lg lg:text-justify lg:-m-2 lg:whitespace-pre-line">My main interest is Quality Assurance. &NewLine; I'm expanding my knowledge into automation.</p>
     </div>
     
-    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center lg:justify-items-center">
         <Code id="codeIcon" alt="Coding" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500"/>
         <p id="devParagraph" class="col-start-1 row-start-1 hidden text-md text-wrap lg:text-lg lg:text-justify lg:-m-2">I'm also interested in FrontEnd development.</p>
     </div>
     
-    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center">
+    <div class="grid col-span-1 place-content-center lg:grid lg:row-span-1 lg:place-content-center lg:justify-items-center">
         <Cog id="cogIcon" alt="Technologies" class="w-12 h-12 lg:w-14 lg:h-14 hover:cursor-pointer hover:text-purple-500"/>
         <div id="technologyContainer" class="hidden place-content-center">
             <ul class="flex flex-col gap-y-2 lg:flex lg:flex-row lg:gap-x-3.5">
@@ -42,6 +42,19 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
     const bugIcon = document.querySelector("#bugIcon");
     const testingParagraph = document.querySelector("#testingParagraph");
 
+    function appendTestParagraph(){
+        bugIcon.insertAdjacentHTML('beforebegin','<p id="before-testing" class="mb-1 text-xl text-center">Testing</p>');
+    }
+
+    function removeTestParagraph(){
+        let beforeTestParagraph = document.querySelector('#before-testing');
+        beforeTestParagraph.remove();
+    }
+
+    bugIcon.addEventListener('mouseenter', appendTestParagraph, {});
+
+    bugIcon.addEventListener('mouseleave', removeTestParagraph, {});
+
     bugIcon.addEventListener('click', () =>{
         bugIcon.classList.add('hidden');
         testingParagraph.classList.remove('hidden');
@@ -50,6 +63,19 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
     const codeIcon = document.querySelector("#codeIcon");
     const devParagraph = document.querySelector("#devParagraph");
 
+    function appendDevParagraph(){
+        codeIcon.insertAdjacentHTML('beforebegin','<p id="before-coding" class="text-center text-wrap mb-1 text-xl">Development</p>');
+    }
+
+    function removeDevParagraph(){
+        let beforeDevParagraph = document.querySelector('#before-coding');
+        beforeDevParagraph.remove();
+    }
+
+    codeIcon.addEventListener('mouseenter', appendDevParagraph, {});
+
+    codeIcon.addEventListener('mouseleave', removeDevParagraph, {});
+
     codeIcon.addEventListener('click', () =>{
         codeIcon.classList.add('hidden');
         devParagraph.classList.remove('hidden');
@@ -57,6 +83,19 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
 
     const cogIcon = document.querySelector("#cogIcon");
     const technologyContainer = document.querySelector("#technologyContainer");
+
+    function appendToolsParagraph(){
+        cogIcon.insertAdjacentHTML('beforebegin','<p id="before-tools" class="mb-1 text-xl text-center"> Tools & Technologies </p>');
+    }
+
+    function removeToolsParagraph(){
+        let beforeToolsParagraph = document.querySelector('#before-tools');
+        beforeToolsParagraph.remove();
+    }
+
+    cogIcon.addEventListener('mouseenter', appendToolsParagraph, {});
+
+    cogIcon.addEventListener('mouseleave', removeToolsParagraph, {});
 
     cogIcon.addEventListener('click', () =>{
         cogIcon.classList.add('hidden');
