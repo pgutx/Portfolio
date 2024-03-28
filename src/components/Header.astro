@@ -4,20 +4,35 @@ import { Linkedin } from 'simple-icons-astro';
 import { Github } from 'simple-icons-astro';
 import { Moon } from 'lucide-astro';
 import { Sun } from 'lucide-astro';
+import { AlignJustify } from 'lucide-astro';
 ---
 
 <header
 class="
- flex flex-col items-center space-y-2
+ flex flex-row items-center justify-around space-y-2
  col-span-8 lg:flex lg:flex-row lg:justify-around lg:items-center lg:space-y-0
  border-b-2 border-slate-300 dark:border-indigo-500 shadow-sm 
  bg-gradient-to-r from-slate-100 from-20% via-indigo-100 via-60% to-slate-100 to-100% 
  dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark:via-60% dark:to-slate-900 dark:to-100%"
     >
-    <div class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0">
-            <Button href="/">Home</Button>
-            <Button href="/manual">Manual</Button>
-            <Button href="/automation">Automation</Button>
+    <div class="lg:hidden flex flex-row space-x-4">
+        <AlignJustify small-nav-button class="w-8 h-8"></AlignJustify>
+        <ul id="smallNavigation" class="hidden">
+            <li>
+                <a href="/">Home</a>
+            </li>
+            <li>
+                <a href="/manual" >Manual</a>
+            </li>
+            <li>
+                <a href="/automation">Automation</a>
+            </li>
+        </ul>
+    </div>
+    <div id="navContainer" class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0">
+            <Button nav-button href="/">Home</Button>
+            <Button nav-button href="/manual">Manual</Button>
+            <Button nav-button href="/automation">Automation</Button>
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6">
@@ -82,6 +97,7 @@ const theme = (() => {
     }
 
     window.localStorage.setItem("theme", theme);
+
     const handleToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
@@ -92,7 +108,7 @@ const theme = (() => {
        lightContainer.classList.remove('hidden');
        darkContainer.classList.add('hidden');
        darkModeIcon.classList.add('hidden');
-}
+    };
     const lightToggleClick = () => {
       const element = document.documentElement;
       element.classList.toggle("dark");
@@ -108,4 +124,41 @@ const theme = (() => {
     darkMode.addEventListener('click',handleToggleClick);
     lightMode.addEventListener('click',lightToggleClick);
 // END -------------------------------------------------------
+
+const viewportQuery = window.matchMedia("(max-width: 600px)");
+const getNavCont = document.querySelector('#navContainer');
+
+const navbar = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("navbarStorage")) {
+        return localStorage.getItem("navbarStorage");
+      }
+    if(window.matchMedia("(max-width: 600px)").matches){
+        return "small";
+    }
+    return "large";
+});
+
+window.localStorage.setItem("navbarStorage", navbar);
+
+if(navbar === "small"){
+    getNavCont.classList.add('hidden');
+} else{
+    getNavCont.classList.add('hidden');
+}
+
+viewportQuery.addEventListener("change", (event) => {
+    if(event.matches) { 
+        localStorage.setItem("navbarStorage", "small");
+    } else {
+        localStorage.setItem("navbarStorage", "large");
+    }
+});
+
+const smallNavButton = document.querySelector('[small-nav-button]');
+const smallNavUL = document.querySelector('#smallNavigation');
+
+smallNavButton.addEventListener('click', () => {
+    smallNavUL.classList.remove('hidden');
+});
+
 </script>
