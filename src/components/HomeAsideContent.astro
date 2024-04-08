@@ -42,6 +42,31 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
     const bugIcon = document.querySelector("#bugIcon");
     const testingParagraph = document.querySelector("#testingParagraph");
 
+    bugIcon.addEventListener('click', () =>{
+        bugIcon.classList.add('hidden');
+        testingParagraph.classList.remove('hidden');
+    });
+
+
+    const codeIcon = document.querySelector("#codeIcon");
+    const devParagraph = document.querySelector("#devParagraph");
+
+    codeIcon.addEventListener('click', () =>{
+        codeIcon.classList.add('hidden');
+        devParagraph.classList.remove('hidden');
+    });
+
+  
+    const cogIcon = document.querySelector("#cogIcon");
+    const technologyContainer = document.querySelector("#technologyContainer");
+
+    cogIcon.addEventListener('click', () =>{
+        cogIcon.classList.add('hidden');
+        technologyContainer.classList.remove('hidden');
+    });
+
+
+    if(window.matchMedia("(min-width: 600px)").matches){
     function appendTestParagraph(){
         bugIcon.insertAdjacentHTML('beforebegin','<p id="before-testing" class="mb-1 text-xl text-center">Testing</p>');
     }
@@ -55,13 +80,6 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
 
     bugIcon.addEventListener('mouseleave', removeTestParagraph, {});
 
-    bugIcon.addEventListener('click', () =>{
-        bugIcon.classList.add('hidden');
-        testingParagraph.classList.remove('hidden');
-    });
-
-    const codeIcon = document.querySelector("#codeIcon");
-    const devParagraph = document.querySelector("#devParagraph");
 
     function appendDevParagraph(){
         codeIcon.insertAdjacentHTML('beforebegin','<p id="before-coding" class="text-center text-wrap mb-1 text-xl">Development</p>');
@@ -76,13 +94,6 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
 
     codeIcon.addEventListener('mouseleave', removeDevParagraph, {});
 
-    codeIcon.addEventListener('click', () =>{
-        codeIcon.classList.add('hidden');
-        devParagraph.classList.remove('hidden');
-    });
-
-    const cogIcon = document.querySelector("#cogIcon");
-    const technologyContainer = document.querySelector("#technologyContainer");
 
     function appendToolsParagraph(){
         cogIcon.insertAdjacentHTML('beforebegin','<p id="before-tools" class="mb-1 text-xl text-center"> Tools & Technologies </p>');
@@ -96,9 +107,6 @@ lg:grid lg:h-full lg:grid-cols-1 lg:grid-rows-3 lg:col-start-1 lg:row-start-1 lg
     cogIcon.addEventListener('mouseenter', appendToolsParagraph, {});
 
     cogIcon.addEventListener('mouseleave', removeToolsParagraph, {});
-
-    cogIcon.addEventListener('click', () =>{
-        cogIcon.classList.add('hidden');
-        technologyContainer.classList.remove('hidden');
-    });
+    }
+    
 </script>
