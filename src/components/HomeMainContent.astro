@@ -48,23 +48,56 @@ import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import 'swiper/css/effect-creative';
 
 import { register } from 'swiper/element/bundle';
 register();
 
+let parameters;
 
-const swiper = new Swiper('.swiper', {
-  direction: 'horizontal',
-  pagination: {
-    el: '.swiper-pagination',
-    bulletClass: 'swiper-pagination-bullet',
-  },
+if(window.matchMedia("(max-width: 600px)").matches){
+  parameters = {
+    grabCursor: true,
+      effect: "creative",
+      creativeEffect: {
+        prev: {
+          shadow: true,
+          translate: [0, 0, -800],
+          rotate: [180, 0, 0],
+        },
+        next: {
+          shadow: true,
+          translate: [0, 0, -800],
+          rotate: [-180, 0, 0],
+        },
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        bulletClass: 'swiper-pagination-bullet',
+      },
+      navigation: {
+        enabled: false,
+        disabledClass: 'swiper-button-disabled',
+      },
+  }
 
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
+} else {
+  parameters = {
+      direction: 'horizontal',
+      touchReleaseOnEdges: true,
+      pagination: {
+        el: '.swiper-pagination',
+        bulletClass: 'swiper-pagination-bullet',
+      },
+
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    }
+  }
+
+const swiper = new Swiper('.swiper', parameters);
 
 
 </script>
