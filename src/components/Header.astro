@@ -10,7 +10,7 @@ import { AlignJustify } from 'lucide-astro';
 <header
 class="
  flex flex-row items-center justify-around space-y-2
- col-span-8 lg:flex lg:flex-row lg:justify-around lg:items-center lg:space-y-0
+ col-span-8 lg:flex lg:flex-row lg:justify-between lg:items-center lg:space-y-0
  border-b-2 border-slate-300 dark:border-indigo-500 shadow-sm 
  bg-gradient-to-r from-slate-100 from-20% via-indigo-100 via-60% to-slate-100 to-100% 
  dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark:via-60% dark:to-slate-900 dark:to-100%"
@@ -29,13 +29,13 @@ class="
             </li>
         </ul>
     </div>
-    <div id="navContainer" class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0">
+    <div id="navContainer" class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0 lg:ml-14">
             <Button nav-button href="/">Home</Button>
             <Button nav-button href="/manual">Manual</Button>
             <Button nav-button href="/automation">Automation</Button>
     </div>
     <div>
-        <ul class="list-none flex flex-row space-x-6">
+        <ul class="list-none flex flex-row space-x-6 lg:mr-14">
             <div class="grid">
             <li id="darkContainer" class="col-start-1 row-start-1">
                 <button id="darkModeToggle">
