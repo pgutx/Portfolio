@@ -31,30 +31,30 @@ class="
         </ul>
     </div>
     <div id="navContainer" class="flex flex-row space-x-2 lg:flex lg:flex-row lg:space-x-4 lg:space-y-0 lg:ml-14">
-            <Button nav-button href="/">Home</Button>
-            <Button nav-button href="/manual">Manual</Button>
-            <Button nav-button href="/automation">Automation</Button>
+            <Button  href="/">Home</Button>
+            <Button  href="/manual">Manual</Button>
+            <Button  href="/automation">Automation</Button>
     </div>
     <div>
         <ul class="list-none flex flex-row space-x-6 lg:mr-14">
             <div class="grid">
-            <li id="darkContainer" class="col-start-1 row-start-1">
-                <button id="darkModeToggle">
-                    <Moon id="darkModeIcon" alt="Dark mode" class="hover:text-purple-500">
+            <li dark-mode class="col-start-1 row-start-1">
+                <button id="darkModeToggle" name="darkModeToggle" type="button">
+                    <Moon dark-mode alt="Dark mode" class="hover:text-purple-500">
                 </button>
             </li>
-            <li id="lightContainer" class="col-start-1 row-start-1 hidden">
-                <button id="lightModeToggle">
-                    <Sun id="lightModeIcon" alt="Light mode" class="hover:text-purple-500 hidden">
+            <li light-mode class="col-start-1 row-start-1 hidden">
+                <button id="lightModeToggle" name="lightModeToggle" type="button">
+                    <Sun light-mode alt="Light mode" class="hover:text-purple-500 hidden">
                 </button>
             </li>
             </div>
-            <li id="linkedinDark" class="col-start-1 row-start-1">
+            <li>
                 <a href="https://www.linkedin.com/in/piotr-gutowski-8b449b247/" target="_blank">
                     <Linkedin id="linkedDarkIcon" alt="Linkedin" class="hover:text-purple-500" />
                 </a>
             </li>
-            <li id="githubDark" class="col-start-1 row-start-1">
+            <li>
                 <a href="https://github.com/pgutx" target="_blank">
                     <Github id="githubDarkIcon" alt="Github" class="hover:text-purple-500" />
                 </a>
@@ -67,11 +67,8 @@ class="
 // DARK MODE TOGGLE ---------------------------------------------------------------
 const darkMode = document.querySelector("#darkModeToggle");
 const lightMode = document.querySelector("#lightModeToggle");
-const darkModeIcon = document.querySelector("#darkModeIcon");
-const lightModeIcon = document.querySelector("#lightModeIcon");
-const darkContainer = document.querySelector("#darkContainer");
-const lightContainer = document.querySelector("#lightContainer");
-
+const darkModeSwitch = document.querySelectorAll('[dark-mode]');
+const lightModeSwitch = document.querySelectorAll('[light-mode]');
 
 const theme = (() => {
       if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
@@ -85,16 +82,24 @@ const theme = (() => {
 
     if (theme === "light") {
       document.documentElement.classList.remove("dark");
-      lightModeIcon.classList.add('hidden');
-      lightContainer.classList.add('hidden');
-      darkModeIcon.classList.remove('hidden');
-      darkContainer.classList.remove('hidden');
+
+      for(const light of lightModeSwitch){
+        light.classList.add('hidden');
+      }
+      for(const dark of darkModeSwitch){
+        dark.classList.remove('hidden');
+      }
+
     } else {
       document.documentElement.classList.add("dark");
-      lightModeIcon.classList.remove('hidden');
-      lightContainer.classList.remove('hidden');
-      darkContainer.classList.add('hidden');
-      darkModeIcon.classList.add('hidden');
+
+      for(const light of lightModeSwitch){
+        light.classList.remove('hidden');
+      }
+      for(const dark of darkModeSwitch){
+        dark.classList.add('hidden');
+      }
+
     }
 
     window.localStorage.setItem("theme", theme);
@@ -105,10 +110,14 @@ const theme = (() => {
 
       const isDark = element.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
-       lightModeIcon.classList.remove('hidden');
-       lightContainer.classList.remove('hidden');
-       darkContainer.classList.add('hidden');
-       darkModeIcon.classList.add('hidden');
+
+      for(const light of lightModeSwitch){
+        light.classList.remove('hidden');
+      }
+      for(const dark of darkModeSwitch){
+        dark.classList.add('hidden');
+      }
+
     };
     const lightToggleClick = () => {
       const element = document.documentElement;
@@ -116,16 +125,21 @@ const theme = (() => {
 
       const isDark = element.classList.contains("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
-       lightModeIcon.classList.add('hidden');
-       lightContainer.classList.add('hidden');
-       darkModeIcon.classList.remove('hidden');
-       darkContainer.classList.remove('hidden');
+
+      for(const light of lightModeSwitch){
+        light.classList.add('hidden');
+      }
+      for(const dark of darkModeSwitch){
+        dark.classList.remove('hidden');
+      }
+
     };
 
     darkMode.addEventListener('click',handleToggleClick);
     lightMode.addEventListener('click',lightToggleClick);
 // END -------------------------------------------------------
 
+// Small Device Navbar
 const viewportQuery = window.matchMedia("(max-width: 600px)");
 const getNavCont = document.querySelector('#navContainer');
 
@@ -165,6 +179,6 @@ smallNavButton.addEventListener('click', () => {
         smallNavUL.classList.add('hidden');
     }
 });
-
+// END -------------------------------
 
 </script>

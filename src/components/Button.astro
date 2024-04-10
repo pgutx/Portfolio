@@ -2,7 +2,15 @@
 const url = new URL(Astro.props, Astro.url);
 ---
 <a {...Astro.props}
-class="h-14 w-28 lg:h-14 lg:w-36 text-base font-medium text-slate-200 uppercase tracking-widest rounded-full border-none items-center place-content-center shadow-md shadow-violet-500/50 bg-purple-500 hover:brightness-125 flex"
+class="
+lg:h-12 lg:w-32 
+text-base font-semibold text-slate-200 uppercase tracking-wider 
+rounded-full border-none flex items-center place-content-center 
+shadow-md shadow-indigo-500/50 bg-violet-600
+hover:bg-slate-100 hover:text-black hover:shadow-none hover:outline hover:outline-2 hover:outline-slate-400
+dark:hover:bg-gray-800 dark:hover:text-slate-200 dark:hover:shadow-none dark:hover:outline dark:hover:outline-2 dark:hover:outline-indigo-500
+focus:text-slate-200 focus:bg-violet-600 focus:outline-none focus:shadow-md focus:shadow-indigo-500/50
+dark:focus:text-slate-200 dark:focus:bg-violet-600 dark:focus:outline-none dark:focus:shadow-md dark:focus:shadow-indigo-500/50"
 >
 <slot/>
 </a>
