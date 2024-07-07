@@ -1,5 +1,5 @@
 ---
-import Button from '../components/Button.astro';
+import Button from './Button.astro';
 import { Linkedin } from 'simple-icons-astro';
 import { Github } from 'simple-icons-astro';
 import { Moon } from 'lucide-astro';
@@ -10,8 +10,8 @@ import { AlignJustify } from 'lucide-astro';
 <header
 class="
  sticky top-0 z-40
- flex flex-row items-center justify-around space-y-2
- col-span-8 py-4 lg:flex lg:flex-row lg:justify-between lg:items-center lg:space-y-0 lg:py-0
+ flex flex-row items-center justify-around space-y-2 max-h-16
+ col-span-8 py-4 lg:flex lg:flex-row lg:justify-between lg:items-center lg:space-y-0 lg:py-0 lg:max-h-24
  border-b-2 border-slate-300 dark:border-indigo-500 shadow-sm 
  bg-gradient-to-r from-slate-100 from-20% via-indigo-100 via-60% to-slate-100 to-100% 
  dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark:via-60% dark:to-slate-900 dark:to-100%"
