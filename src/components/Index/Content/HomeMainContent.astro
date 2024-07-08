@@ -30,7 +30,7 @@ import HomeFifthSlide from './Slides/HomeFifthSlide.astro';
       ...
     </div>
 
-    <div class="swiper-pagination [&_.swiper-pagination-bullet-active]:bg-violet-500 dark:[&_.swiper-pagination-bullet-active]:bg-indigo-400"></div>
+    <div class="swiper-pagination [&_.swiper-pagination-bullet-active]:bg-primary [&_.swiper-pagination-bullet]:bg-primary"></div>
 
     <ArrowLeftCircle class="swiper-button-prev"></ArrowLeftCircle>
     <ArrowRightCircle class="swiper-button-next"></ArrowRightCircle>  
@@ -39,7 +39,7 @@ import HomeFifthSlide from './Slides/HomeFifthSlide.astro';
   
 <style>
     .swiper-button-prev, .swiper-button-next {
-        @apply text-gray-950 dark:text-slate-50 hover:text-violet-500 dark:hover:text-violet-500 w-14 h-14;
+        @apply text-primary w-14 h-14;
     }
 </style>
 
