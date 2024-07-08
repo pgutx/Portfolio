@@ -7,6 +7,8 @@ dark:bg-gradient-to-r dark:from-slate-800 dark:from-20% dark:via-indigo-900 dark
 </footer>
 
 <script>
+    document.addEventListener('astro:page-load', () => {
     const dynamicFooter = document.querySelector("#footerContent");
     dynamicFooter.innerHTML = `Copyright &copy ${new Date().getUTCFullYear()} Piotr Gutowski`;
+    });
 </script>

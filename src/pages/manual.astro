@@ -1,14 +1,27 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Main from '../components/Index/Main.astro';
-import Aside from '../components/Index/Aside.astro';
-import ContentBottom from '../components/Index/ContentBottom.astro';
-import ContentImages from '../components/Index/ContentImages.astro';
+import FirstCard from '../components/Manual/ManualFirstCard.astro';
+import SecondCard from '../components/Manual/ManualSecondCard.astro'
+import ThirdCard from '../components/Manual/ManualThirdCard.astro';
+import FourthCard from '../components/Manual/ManualFourthCard.astro';
+import FirstCardContent from '../components/Manual/Cards/FirstCardContent.astro';
+import SecondCardContent from '../components/Manual/Cards/SecondCardContent.astro';
+import ThirdCardContent from '../components/Manual/Cards/ThirdCardContent.astro';
+import FourthCardContent from '../components/Manual/Cards/FourthCardContent.astro';
 ---
 
 <PageLayout title="Piotr Gutowski - Manual">
-	<Main></Main>
-	<Aside></Aside>
-	<ContentBottom></ContentBottom>
-	<ContentImages></ContentImages>
+	<FirstCard>
+		<FirstCardContent>
+		</FirstCardContent>
+	</FirstCard>
+	<SecondCard>
+		<SecondCardContent></SecondCardContent>
+	</SecondCard>
+	<ThirdCard>
+		<ThirdCardContent></ThirdCardContent>
+	</ThirdCard>
+	<FourthCard>
+		<FourthCardContent></FourthCardContent>
+	</FourthCard>
 </PageLayout>

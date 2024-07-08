@@ -1,0 +1,24 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FirstCard from '../../components/Manual/ManualFirstCard.astro'
+import SecondCard from '../../components/Manual/ManualSecondCard.astro'
+import ThirdCard from '../../components/Manual/ManualThirdCard.astro';
+import FirstCardContent from '../../components/Manual/Cards/FirstCardContent.astro';
+import SecondCardContent from '../../components/Manual/Cards/SecondCardContent.astro';
+import ThirdCardContent from '../../components/Manual/Cards/ThirdCardContent.astro';
+import ManualE2ECard from '../../components/Manual/Posts/ManualE2ECard.astro';
+---
+
+<PageLayout title="Piotr Gutowski - Manual">
+    <FirstCard>
+        <FirstCardContent></FirstCardContent>
+    </FirstCard>
+    <SecondCard>
+        <SecondCardContent></SecondCardContent>
+    </SecondCard>
+    <ThirdCard>
+        <ThirdCardContent></ThirdCardContent>
+    </ThirdCard>
+    <ManualE2ECard></ManualE2ECard>
+</PageLayout>
+

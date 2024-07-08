@@ -53,6 +53,7 @@ import 'swiper/css/effect-creative';
 import { register } from 'swiper/element/bundle';
 register();
 
+document.addEventListener('astro:page-load', () => {
 let parameters;
 
 if(window.matchMedia("(max-width: 600px)").matches){
@@ -99,5 +100,5 @@ if(window.matchMedia("(max-width: 600px)").matches){
 
 const swiper = new Swiper('.swiper', parameters);
 
-
+});
 </script>

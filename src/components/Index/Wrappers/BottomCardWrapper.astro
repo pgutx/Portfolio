@@ -16,9 +16,11 @@ import { ArrowRightCircle } from 'lucide-astro';
     <slot />
 </div>
 <script>
+document.addEventListener('astro:page-load', () => {
     const arrowButtonBottom = document.querySelector("#arrowButtonWrapperBottom");
     const cardWrapperBottom = document.querySelector("#bottomCardWrapper");
     arrowButtonBottom.addEventListener('click', () => {
         cardWrapperBottom.classList.add('hidden');
      });
+});
 </script>
