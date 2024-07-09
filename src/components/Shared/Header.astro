@@ -219,9 +219,8 @@ if(currentUrl==="http://localhost:4321/"){
   document.addEventListener('astro:after-swap', applyTheme);
   applyTheme();
 
-  const getNavCont = document.querySelector('#navContainer');
-
   function applyNavbar() {
+    const getNavCont = document.querySelector('#navContainer');
     localStorage.navbarStorage === 'small'
     ? getNavCont.classList.add('hidden')
     : getNavCont.classList.add('hidden');

@@ -18,10 +18,14 @@ import { ArrowRightCircle } from 'lucide-astro';
 
 <script>
 document.addEventListener('astro:page-load', () => {
+    
     const arrowButtonAside = document.querySelector("#arrowButtonWrapperAside");
     const cardWrapperAside = document.querySelector("#asideCardWrapper");
+
+    if (arrowButtonAside && cardWrapperAside) {
     arrowButtonAside.addEventListener('click', () => {
         cardWrapperAside.classList.add('hidden');
      });
+    }
 });
 </script>

@@ -19,8 +19,10 @@ import { ArrowRightCircle } from 'lucide-astro';
 document.addEventListener('astro:page-load', () => {
     const arrowButtonBottom = document.querySelector("#arrowButtonWrapperBottom");
     const cardWrapperBottom = document.querySelector("#bottomCardWrapper");
+    if (arrowButtonBottom && cardWrapperBottom) {
     arrowButtonBottom.addEventListener('click', () => {
         cardWrapperBottom.classList.add('hidden');
      });
+    }
 });
 </script>
