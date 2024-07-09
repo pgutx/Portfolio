@@ -16,7 +16,7 @@ class="
  ">
     <div class="lg:hidden flex flex-row space-x-4">
         <AlignJustify small-nav-button class="w-8 h-8"></AlignJustify>
-        <ul id="smallNavigation" class="hidden absolute z-50 left-6 top-12 px-1 text-lg text-center bg-popover border rounded-lg  dark:border-indigo-300 dark:bg-gray-800 divide-y divide-slate-300 dark:divide-indigo-300">
+        <ul id="smallNavigation" class="hidden absolute z-50 left-5 top-12 px-1 text-lg text-center bg-popover border rounded-lg  dark:border-indigo-300 dark:bg-gray-800 divide-y divide-slate-300 dark:divide-indigo-300">
             <li>
                 <a id="smallNavigationHomeText" href="/">Home</a>
             </li>
@@ -218,4 +218,14 @@ if(currentUrl==="http://localhost:4321/"){
 
   document.addEventListener('astro:after-swap', applyTheme);
   applyTheme();
+
+  const getNavCont = document.querySelector('#navContainer');
+
+  function applyNavbar() {
+    localStorage.navbarStorage === 'small'
+    ? getNavCont.classList.add('hidden')
+    : getNavCont.classList.add('hidden');
+  }
+  document.addEventListener('astro:after-swap', applyNavbar);
+  applyNavbar();
 </script>
