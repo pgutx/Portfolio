@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import SecondCard from '../../components/Automation/AutSecondCard.astro'
+import ThirdCard from '../../components/Automation/AutThirdCard.astro';
+import FourthCard from '../../components/Automation/AutFourthCard.astro';
+import SecondCardContent from '../../components/Automation/Cards/AutSecondCardContent.astro';
+import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
+import FourthCardContent from '../../components/Automation/Cards/AutFourthCardContent.astro';
+import PlaywrightCard from '../../components/Automation/Posts/PlaywrightCard.astro';
+---
+
+<PageLayout title="Automation - Playwright">
+	<PlaywrightCard></PlaywrightCard>
+	<SecondCard>
+		<SecondCardContent></SecondCardContent>
+	</SecondCard>
+	<ThirdCard>
+		<ThirdCardContent></ThirdCardContent>
+	</ThirdCard>
+	<FourthCard>
+		<FourthCardContent></FourthCardContent>
+	</FourthCard>
+</PageLayout>

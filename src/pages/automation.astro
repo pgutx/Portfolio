@@ -1,14 +1,27 @@
 ---
 import PageLayout from '../layouts/PageLayout.astro';
-import Main from '../components/Index/Main.astro';
-import Aside from '../components/Index/Aside.astro';
-import ContentBottom from '../components/Index/ContentBottom.astro';
-import ContentImages from '../components/Index/ContentImages.astro';
+import FirstCard from '../components/Automation/AutFirstCard.astro';
+import SecondCard from '../components/Automation/AutSecondCard.astro'
+import ThirdCard from '../components/Automation/AutThirdCard.astro';
+import FourthCard from '../components/Automation/AutFourthCard.astro';
+import FirstCardContent from '../components/Automation/Cards/AutFirstCardContent.astro';
+import SecondCardContent from '../components/Automation/Cards/AutSecondCardContent.astro';
+import ThirdCardContent from '../components/Automation/Cards/AutThirdCardContent.astro';
+import FourthCardContent from '../components/Automation/Cards/AutFourthCardContent.astro';
 ---
 
 <PageLayout title="Piotr Gutowski - Automation">
-	<Main></Main>
-	<Aside></Aside>
-	<ContentBottom></ContentBottom>
-	<ContentImages></ContentImages>
+	<FirstCard>
+		<FirstCardContent>
+		</FirstCardContent>
+	</FirstCard>
+	<SecondCard>
+		<SecondCardContent></SecondCardContent>
+	</SecondCard>
+	<ThirdCard>
+		<ThirdCardContent></ThirdCardContent>
+	</ThirdCard>
+	<FourthCard>
+		<FourthCardContent></FourthCardContent>
+	</FourthCard>
 </PageLayout>

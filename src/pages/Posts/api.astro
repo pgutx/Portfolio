@@ -1,0 +1,25 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FirstCard from '../../components/Automation/AutFirstCard.astro';
+import SecondCard from '../../components/Automation/AutSecondCard.astro'
+import ThirdCard from '../../components/Automation/AutThirdCard.astro';
+import FourthCard from '../../components/Automation/AutFourthCard.astro';
+import FirstCardContent from '../../components/Automation/Cards/AutFirstCardContent.astro';
+import SecondCardContent from '../../components/Automation/Cards/AutSecondCardContent.astro';
+import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
+import FourthCardContent from '../../components/Automation/Cards/AutFourthCardContent.astro';
+import ApiCard from '../../components/Automation/Posts/APICard.astro';
+---
+
+<PageLayout title="Automation - API">
+	<FirstCard>
+        <FirstCardContent></FirstCardContent>
+    </FirstCard>
+	<SecondCard>
+        <SecondCardContent></SecondCardContent>
+    </SecondCard>
+	<ApiCard></ApiCard>
+	<FourthCard>
+		<FourthCardContent></FourthCardContent>
+	</FourthCard>
+</PageLayout>

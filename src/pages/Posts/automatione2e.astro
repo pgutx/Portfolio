@@ -1,0 +1,23 @@
+---
+import PageLayout from '../../layouts/PageLayout.astro';
+import FirstCard from '../../components/Automation/AutFirstCard.astro';
+import SecondCard from '../../components/Automation/AutSecondCard.astro'
+import ThirdCard from '../../components/Automation/AutThirdCard.astro';
+import FirstCardContent from '../../components/Automation/Cards/AutFirstCardContent.astro';
+import SecondCardContent from '../../components/Automation/Cards/AutSecondCardContent.astro';
+import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
+import AutE2ECard from '../../components/Automation/Posts/AutE2ECard.astro';
+---
+
+<PageLayout title="Automation - E2E">
+	<FirstCard>
+        <FirstCardContent></FirstCardContent>
+    </FirstCard>
+	<SecondCard>
+        <SecondCardContent></SecondCardContent>
+    </SecondCard>
+	<ThirdCard>
+        <ThirdCardContent></ThirdCardContent>
+    </ThirdCard>
+	<AutE2ECard></AutE2ECard>
+</PageLayout>
