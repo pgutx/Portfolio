@@ -7,6 +7,7 @@ import FirstCardContent from '../../components/Manual/Cards/FirstCardContent.ast
 import SecondCardContent from '../../components/Manual/Cards/SecondCardContent.astro';
 import ThirdCardContent from '../../components/Manual/Cards/ThirdCardContent.astro';
 import ManualE2ECard from '../../components/Manual/Posts/ManualE2ECard.astro';
+import ManualE2EPost from '../../components/Manual/Posts/ManualE2EPost.astro';
 ---
 
 <PageLayout title="Manual - E2E">
@@ -19,6 +20,8 @@ import ManualE2ECard from '../../components/Manual/Posts/ManualE2ECard.astro';
     <ThirdCard>
         <ThirdCardContent></ThirdCardContent>
     </ThirdCard>
-    <ManualE2ECard></ManualE2ECard>
+    <ManualE2ECard>
+        <ManualE2EPost></ManualE2EPost>
+    </ManualE2ECard>
 </PageLayout>
 

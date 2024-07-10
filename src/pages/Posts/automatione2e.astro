@@ -7,6 +7,7 @@ import FirstCardContent from '../../components/Automation/Cards/AutFirstCardCont
 import SecondCardContent from '../../components/Automation/Cards/AutSecondCardContent.astro';
 import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
 import AutE2ECard from '../../components/Automation/Posts/AutE2ECard.astro';
+import AutE2EPost from '../../components/Automation/Posts/AutE2EPost.astro';
 ---
 
 <PageLayout title="Automation - E2E">
@@ -19,5 +20,7 @@ import AutE2ECard from '../../components/Automation/Posts/AutE2ECard.astro';
 	<ThirdCard>
         <ThirdCardContent></ThirdCardContent>
     </ThirdCard>
-	<AutE2ECard></AutE2ECard>
+	<AutE2ECard>
+        <AutE2EPost></AutE2EPost>
+    </AutE2ECard>
 </PageLayout>

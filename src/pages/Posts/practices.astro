@@ -7,13 +7,16 @@ import FirstCardContent from '../../components/Automation/Cards/AutFirstCardCont
 import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
 import FourthCardContent from '../../components/Automation/Cards/AutFourthCardContent.astro';
 import PracticesCard from '../../components/Automation/Posts/PracticesCard.astro';
+import PracticesPost from '../../components/Automation/Posts/PracticesPost.astro';
 ---
 
 <PageLayout title="Automation - Practices">
 	<FirstCard>
         <FirstCardContent></FirstCardContent>
     </FirstCard>
-	<PracticesCard></PracticesCard>
+	<PracticesCard>
+		<PracticesPost></PracticesPost>
+	</PracticesCard>
 	<ThirdCard>
 		<ThirdCardContent></ThirdCardContent>
 	</ThirdCard>

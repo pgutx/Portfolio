@@ -7,10 +7,13 @@ import SecondCardContent from '../../components/Automation/Cards/AutSecondCardCo
 import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
 import FourthCardContent from '../../components/Automation/Cards/AutFourthCardContent.astro';
 import PlaywrightCard from '../../components/Automation/Posts/PlaywrightCard.astro';
+import PlaywrightPost from '../../components/Automation/Posts/PlaywrightPost.astro';
 ---
 
 <PageLayout title="Automation - Playwright">
-	<PlaywrightCard></PlaywrightCard>
+	<PlaywrightCard>
+		<PlaywrightPost></PlaywrightPost>
+	</PlaywrightCard>
 	<SecondCard>
 		<SecondCardContent></SecondCardContent>
 	</SecondCard>

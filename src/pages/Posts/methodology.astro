@@ -7,6 +7,7 @@ import FirstCardContent from '../../components/Manual/Cards/FirstCardContent.ast
 import SecondCardContent from '../../components/Manual/Cards/SecondCardContent.astro';
 import FourthCardContent from '../../components/Manual/Cards/FourthCardContent.astro';
 import MethodologyCard from '../../components/Manual/Posts/MethodologyCard.astro';
+import MethodologyPost from '../../components/Manual/Posts/MethodologyPost.astro';
 ---
 
 <PageLayout title="Manual - Methodology">
@@ -16,7 +17,9 @@ import MethodologyCard from '../../components/Manual/Posts/MethodologyCard.astro
     <SecondCard>
         <SecondCardContent></SecondCardContent>
     </SecondCard>
-    <MethodologyCard></MethodologyCard>
+    <MethodologyCard>
+        <MethodologyPost></MethodologyPost>
+    </MethodologyCard>
 	<FourthCard>
 		<FourthCardContent></FourthCardContent>
 	</FourthCard>

@@ -9,6 +9,7 @@ import SecondCardContent from '../../components/Automation/Cards/AutSecondCardCo
 import ThirdCardContent from '../../components/Automation/Cards/AutThirdCardContent.astro';
 import FourthCardContent from '../../components/Automation/Cards/AutFourthCardContent.astro';
 import ApiCard from '../../components/Automation/Posts/APICard.astro';
+import ApiPost from '../../components/Automation/Posts/APIPost.astro';
 ---
 
 <PageLayout title="Automation - API">
@@ -18,7 +19,9 @@ import ApiCard from '../../components/Automation/Posts/APICard.astro';
 	<SecondCard>
         <SecondCardContent></SecondCardContent>
     </SecondCard>
-	<ApiCard></ApiCard>
+	<ApiCard>
+		<ApiPost></ApiPost>
+	</ApiCard>
 	<FourthCard>
 		<FourthCardContent></FourthCardContent>
 	</FourthCard>
