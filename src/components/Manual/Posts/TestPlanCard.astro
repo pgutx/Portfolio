@@ -1,6 +1,24 @@
-<div transition:name="firstpost" class="
+<div id="testPlanCard" transition:name="firstpost" class="
 col-span-8 row-start-2 row-span-2 mx-6
 lg:col-span-4 lg:row-span-4 lg:col-start-2 lg:row-start-2 lg:mb-72 lg:mt-[27px] lg:-mr-32 lg:ml-[72px] lg:max-h-[382px] 
 border rounded-lg shadow-sm">
 <slot />
 </div>
+
+<script>
+    import Bowser from "bowser";
+
+    document.addEventListener('astro:page-load', () => {
+
+    const browser = Bowser.getParser(window.navigator.userAgent);
+
+    const firefox = "Firefox";
+
+    const testPlanCard = document.querySelector('#testPlanCard');
+
+    if(`${browser.getBrowserName()}`=== firefox){
+        testPlanCard.classList.replace('lg:mt-[27px]', 'lg:mt-[45px]');
+        testPlanCard.classList.replace('lg:mb-72', 'lg:mb-[330px]');
+    }
+    });
+</script>
