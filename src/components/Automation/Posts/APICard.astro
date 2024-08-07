@@ -1,6 +1,24 @@
-<div transition:name="thirdpost" class="
+<div id="apiCard" transition:name="thirdpost" class="
 col-span-8 row-start-6 row-span-2 mx-6
 lg:col-span-4 lg:row-span-4 lg:col-start-2 lg:row-start-4 lg:mt-[2px] lg:-mr-32 lg:ml-[72px] lg:max-h-[382px]
 border rounded-lg shadow-sm">
 <slot />
 </div>
+
+<script>
+    import Bowser from "bowser";
+
+    document.addEventListener('astro:page-load', () => {
+
+    const browser = Bowser.getParser(window.navigator.userAgent);
+
+    const firefox = "Firefox";
+
+    const apiCard = document.querySelector('#apiCard');
+
+    if(`${browser.getBrowserName()}`=== firefox){
+        apiCard.classList.replace('lg:mt-[2px]', 'lg:mt-[150px]');
+        apiCard.classList.add('lg:mb-[144px]');
+    }
+    });
+</script>

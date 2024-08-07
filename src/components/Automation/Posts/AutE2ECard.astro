@@ -1,6 +1,24 @@
-<div transition:name="fourthpost" class="
+<div id="autE2ECard" transition:name="fourthpost" class="
 col-span-8 row-start-8 row-span-2 mx-6
 lg:col-span-4 lg:row-span-4 lg:col-start-4 lg:row-start-4 lg:mt-[22px] lg:mr-[72px] lg:-ml-32 lg:max-h-[382px]
 border rounded-lg shadow-sm">
 <slot />
 </div>
+
+<script>
+    import Bowser from "bowser";
+
+    document.addEventListener('astro:page-load', () => {
+
+    const browser = Bowser.getParser(window.navigator.userAgent);
+
+    const firefox = "Firefox";
+
+    const autE2ECard = document.querySelector('#autE2ECard');
+
+    if(`${browser.getBrowserName()}`=== firefox){
+        autE2ECard.classList.replace('lg:mt-[22px]', 'lg:mt-[180px]');
+        autE2ECard.classList.add('lg:mb-[144px]');
+    }
+    });
+</script>
