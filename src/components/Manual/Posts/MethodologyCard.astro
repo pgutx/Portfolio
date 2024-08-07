@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const methodologyCard = document.querySelector('#methodologyCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(methodologyCard && `${browser.getBrowserName()}`=== firefox){
         methodologyCard.classList.replace('lg:mt-[44px]', 'lg:mt-[180px]');
         methodologyCard.classList.add('lg:mb-[144px]');
     }

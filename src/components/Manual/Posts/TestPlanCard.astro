@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const testPlanCard = document.querySelector('#testPlanCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(testPlanCard && `${browser.getBrowserName()}`=== firefox){
         testPlanCard.classList.replace('lg:mt-[27px]', 'lg:mt-[45px]');
         testPlanCard.classList.replace('lg:mb-72', 'lg:mb-[330px]');
     }

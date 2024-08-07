@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const testCaseCard = document.querySelector('#testCaseCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(testCaseCard && `${browser.getBrowserName()}`=== firefox){
         testCaseCard.classList.replace('lg:mt-[27px]', 'lg:mt-[45px]');
         testCaseCard.classList.replace('lg:mb-72', 'lg:mb-[330px]');
     }

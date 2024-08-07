@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const manualE2ECard = document.querySelector('#manualE2ECard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(manualE2ECard && `${browser.getBrowserName()}`=== firefox){
         manualE2ECard.classList.replace('lg:mt-[44px]', 'lg:mt-[180px]');
         manualE2ECard.classList.add('lg:mb-[144px]');
     }

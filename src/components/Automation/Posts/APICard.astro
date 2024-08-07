@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const apiCard = document.querySelector('#apiCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(apiCard && `${browser.getBrowserName()}`=== firefox){
         apiCard.classList.replace('lg:mt-[2px]', 'lg:mt-[150px]');
         apiCard.classList.add('lg:mb-[144px]');
     }

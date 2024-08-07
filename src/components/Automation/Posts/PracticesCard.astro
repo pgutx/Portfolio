@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const practicesCard = document.querySelector('#practicesCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(practicesCard && `${browser.getBrowserName()}`=== firefox){
         practicesCard.classList.replace('lg:mt-[27px]', 'lg:mt-[45px]');
         practicesCard.classList.replace('lg:mb-72', 'lg:mb-[330px]');
     }

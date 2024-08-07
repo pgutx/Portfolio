@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const playwrightCard = document.querySelector('#playwrightCard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(playwrightCard && `${browser.getBrowserName()}`=== firefox){
         playwrightCard.classList.replace('lg:mt-[22px]', 'lg:mt-[40px]');
         playwrightCard.classList.replace('lg:mb-72', 'lg:mb-[330px]');
     }

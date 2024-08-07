@@ -16,7 +16,7 @@ border rounded-lg shadow-sm">
 
     const autE2ECard = document.querySelector('#autE2ECard');
 
-    if(`${browser.getBrowserName()}`=== firefox){
+    if(autE2ECard && `${browser.getBrowserName()}`=== firefox){
         autE2ECard.classList.replace('lg:mt-[22px]', 'lg:mt-[180px]');
         autE2ECard.classList.add('lg:mb-[144px]');
     }
