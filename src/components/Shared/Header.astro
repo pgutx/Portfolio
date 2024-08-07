@@ -184,21 +184,16 @@ const smallNavigationManualText = document.querySelector('#smallNavigationManual
 const smallNavigationAutomationText = document.querySelector('#smallNavigationAutomationText');
 
 const currentUrl = window.location.href;
-/*
-https://piotr-gutowski-qa.netlify.app/
-https://piotr-gutowski-qa.netlify.app/manual/
-https://piotr-gutowski-qa.netlify.app/automation/
-*/
 
-if(currentUrl==="http://localhost:4321/"){
+if(currentUrl==="https://piotr-gutowski-qa.netlify.app/"){
 
   smallNavigationHomeText.classList.add('text-amber-500');
 
-} else if(currentUrl==="http://localhost:4321/manual") {
+} else if(currentUrl==="https://piotr-gutowski-qa.netlify.app/manual/") {
 
   smallNavigationManualText.classList.add('text-amber-500');
 
-} else if(currentUrl==="http://localhost:4321/automation") {
+} else if(currentUrl==="https://piotr-gutowski-qa.netlify.app/automation/") {
 
   smallNavigationAutomationText.classList.add('text-amber-500');
 
