@@ -9,4 +9,11 @@ border-t-2">
     const dynamicFooter = document.querySelector("#footerContent");
     dynamicFooter.innerHTML = `Copyright &copy ${new Date().getUTCFullYear()} Piotr Gutowski`;
     });
+
+    function applyFooter() {
+    const dynamicFooter = document.querySelector("#footerContent");
+    dynamicFooter.innerHTML = `Copyright &copy ${new Date().getUTCFullYear()} Piotr Gutowski`;
+    }
+    document.addEventListener('astro:after-swap', applyFooter);
+    applyFooter();
 </script>
