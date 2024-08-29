@@ -206,9 +206,38 @@ if(currentUrl==="https://piotr-gutowski-qa.netlify.app/"){
 
 <script is:inline>
   function applyTheme() {
+  {
+    const darkModeSwitch = document.querySelectorAll('[dark-mode]');
+    const lightModeSwitch = document.querySelectorAll('[light-mode]');
+
+    function darkModeHideLoop(){
+      for(const dark of darkModeSwitch){
+        dark.classList.add('hidden');
+      }
+    }
+
+    function darkModeShowLoop(){
+      for(const dark of darkModeSwitch){
+        dark.classList.remove('hidden');
+      }
+    }
+
+    function lightModeHideLoop(){
+      for(const light of lightModeSwitch){
+        light.classList.add('hidden');
+      }
+    }
+
+    function lightModeShowLoop(){
+      for(const light of lightModeSwitch){
+        light.classList.remove('hidden');
+      }
+    }
+  
     localStorage.theme === 'dark'
-      ? document.documentElement.classList.add("dark")
-      : document.documentElement.classList.remove("dark");
+      ? document.documentElement.classList.add("dark") &&  lightModeHideLoop() && darkModeShowLoop()
+      : document.documentElement.classList.remove("dark") &&  darkModeHideLoop() && lightModeShowLoop();
+  }
   }
 
   document.addEventListener('astro:after-swap', applyTheme);
