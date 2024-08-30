@@ -185,7 +185,7 @@ smallNavButton.addEventListener('click', () => {
 const smallNavigationHomeText = document.querySelector('#smallNavigationHomeText');
 const smallNavigationManualText = document.querySelector('#smallNavigationManualText');
 const smallNavigationAutomationText = document.querySelector('#smallNavigationAutomationText');
-const baseURL = "https://piotr-gutowski-qa.netlify.app";
+const baseURL = "https://piotr-gutowski-qa.netlify.app/";
 const currentUrl = window.location.href;
 
 switch(currentUrl){
@@ -193,34 +193,34 @@ switch(currentUrl){
   case baseURL:
     smallNavigationHomeText.classList.add('text-amber-500');
   break;
-  case baseURL + '/manual/':
+  case baseURL + 'manual/':
     smallNavigationManualText.classList.add('text-amber-500');
   break;
-  case baseURL + '/automation/':
+  case baseURL + 'automation/':
     smallNavigationAutomationText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/testplan/':
+  case baseURL + 'posts/testplan/':
     smallNavigationManualText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/testcase/':
+  case baseURL + 'posts/testcase/':
     smallNavigationManualText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/methodology/':
+  case baseURL + 'posts/methodology/':
     smallNavigationManualText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/manuale2e/':
+  case baseURL + 'posts/manuale2e/':
     smallNavigationManualText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/playwright/':
+  case baseURL + 'posts/playwright/':
     smallNavigationAutomationText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/practices/':
+  case baseURL + 'posts/practices/':
     smallNavigationAutomationText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/api/':
+  case baseURL + 'posts/api/':
     smallNavigationAutomationText.classList.add('text-amber-500');
   break;
-  case baseURL + '/posts/automatione2e/':
+  case baseURL + 'posts/automatione2e/':
     smallNavigationAutomationText.classList.add('text-amber-500');
   break;
 
