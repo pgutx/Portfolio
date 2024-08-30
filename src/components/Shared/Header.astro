@@ -62,7 +62,7 @@ class="
 </header>
 
 <script>
-// DARK MODE TOGGLE ---------------------------------------------------------------
+// Dark mode
 document.addEventListener('astro:page-load', () => {
 const darkMode = document.querySelector("#darkModeToggle");
 const lightMode = document.querySelector("#lightModeToggle");
@@ -136,9 +136,8 @@ const theme = (() => {
 
     darkMode.addEventListener('click',handleToggleClick);
     lightMode.addEventListener('click',lightToggleClick);
-// END -------------------------------------------------------
 
-// Small Device Navbar
+// Small device navbar
 const viewportQuery = window.matchMedia("(max-width: 600px)");
 const getNavCont = document.querySelector('#navContainer');
 
@@ -178,34 +177,63 @@ smallNavButton.addEventListener('click', () => {
         smallNavUL.classList.add('hidden');
     }
 });
-// END -------------------------------
+
+
+// Small navbar text color
+{
+
 const smallNavigationHomeText = document.querySelector('#smallNavigationHomeText');
 const smallNavigationManualText = document.querySelector('#smallNavigationManualText');
 const smallNavigationAutomationText = document.querySelector('#smallNavigationAutomationText');
-
+const baseURL = "https://piotr-gutowski-qa.netlify.app";
 const currentUrl = window.location.href;
 
-if(currentUrl==="https://piotr-gutowski-qa.netlify.app/"){
+switch(currentUrl){
 
-  smallNavigationHomeText.classList.add('text-amber-500');
+  case baseURL:
+    smallNavigationHomeText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/manual/':
+    smallNavigationManualText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/automation/':
+    smallNavigationAutomationText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/testplan/':
+    smallNavigationManualText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/testcase/':
+    smallNavigationManualText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/methodology/':
+    smallNavigationManualText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/manuale2e/':
+    smallNavigationManualText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/playwright/':
+    smallNavigationAutomationText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/practices/':
+    smallNavigationAutomationText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/api/':
+    smallNavigationAutomationText.classList.add('text-amber-500');
+  break;
+  case baseURL + '/posts/automatione2e/':
+    smallNavigationAutomationText.classList.add('text-amber-500');
+  break;
 
-} else if(currentUrl==="https://piotr-gutowski-qa.netlify.app/manual/") {
-
-  smallNavigationManualText.classList.add('text-amber-500');
-
-} else if(currentUrl==="https://piotr-gutowski-qa.netlify.app/automation/") {
-
-  smallNavigationAutomationText.classList.add('text-amber-500');
+}
 
 }
 
 });
-
-
 </script>
 
 <script is:inline>
   function applyTheme() {
+
   {
     const darkModeSwitch = document.querySelectorAll('[dark-mode]');
     const lightModeSwitch = document.querySelectorAll('[light-mode]');
@@ -234,10 +262,30 @@ if(currentUrl==="https://piotr-gutowski-qa.netlify.app/"){
       }
     }
   
-    localStorage.theme === 'dark'
-      ? document.documentElement.classList.add("dark") &&  lightModeHideLoop() && darkModeShowLoop()
-      : document.documentElement.classList.remove("dark") &&  darkModeHideLoop() && lightModeShowLoop();
+
+    const storedTheme = localStorage.getItem('theme') || 'light';
+    const iconState = localStorage.getItem('iconState') || 'light'; 
+
+    if (storedTheme === 'dark' && !document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.add('dark');
+      lightModeHideLoop();
+      darkModeShowLoop();
+    } else if (storedTheme === 'light' && document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      darkModeHideLoop();
+      lightModeShowLoop();
+    }
+
+    if (iconState === 'dark') {
+      lightModeHideLoop();
+      darkModeShowLoop();
+    } else {
+      darkModeHideLoop();
+      lightModeShowLoop();
+    }
+
   }
+
   }
 
   document.addEventListener('astro:after-swap', applyTheme);
@@ -251,4 +299,5 @@ if(currentUrl==="https://piotr-gutowski-qa.netlify.app/"){
   }
   document.addEventListener('astro:after-swap', applyNavbar);
   applyNavbar();
+
 </script>
